@@ -1,0 +1,72 @@
+{
+  "name": "jenkins-client-ts",
+  "version": "1.0.0",
+  "description": "Jenkins Typescript Client",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": "https://github.com/parsable/jenkins-client-ts",
+  "homepage": "https://github.com/parsable/jenkins-client-ts",
+  "keywords": [
+    "jenkins",
+    "typescript"
+  ],
+  "author": "liubov.pitko@parsable.com",
+  "license": "Apache-2.0",
+  "scripts": {
+    "cleanup": "docker rm -f jenkins || exit 0",
+    "jenkins": "yarn run cleanup && docker run --name jenkins -p 8080:8080 lubaparsable/jenkins:2.332.2",
+    "format": "prettier --write '**/(*.ts)'",
+    "lint": "eslint --fix --no-error-on-unmatched-pattern index.ts {src/,__tests__/}/** --ext .ts",
+    "test": "jest --runInBand --testMatch '**/?(*.)+(spec|test|int).ts' --coverage",
+    "test:unit": "jest --testMatch '**/?(*.)+(spec|test).ts'",
+    "test:int": "jest --testMatch '**/?(*.)+(int).ts'",
+    "analyze:licenses": "license-checker --production --start . --out reports/licenses/license.csv",
+    "build": "rm -rf lib && tsc --project tsconfig.build.json",
+    "prepublishOnly": "yarn run build",
+    "lint-staged": "lint-staged",
+    "readme": "cd docs && node docs.js",
+    "release:alpha": "release-it --preRelease=alpha --github.release --github.autoGenerate",
+    "release": "release-it --github.release --github.autoGenerate",
+    "add-license-headers": "node add-license-header.js"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "yarn run format",
+      "yarn run lint"
+    ]
+  },
+  "dependencies": {
+    "axios": "0.26.1",
+    "axios-cookiejar-support": "2.0.4",
+    "deepmerge": "4.2.2",
+    "fast-xml-parser": "3.21.1",
+    "tough-cookie": "4.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "axios-mock-adapter": "^1.20.0",
+    "documentation": "^13.2.5",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^26.6.3",
+    "jest-test-each": "^0.9.1",
+    "license-checker": "^25.0.1",
+    "lint-staged": "^12.3.8",
+    "prettier": "^2.1.2",
+    "release-it": "^14.14.2",
+    "ts-jest": "^26.5.5",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.6.3",
+    "uuid": "^8.3.2"
+  }
+}

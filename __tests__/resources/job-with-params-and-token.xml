@@ -1,0 +1,24 @@
+<flow-definition plugin="workflow-job@1145.v7f2433caa07f">
+    <actions/>
+    <description>Job params and token</description>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.StringParameterDefinition>
+                    <name>param</name>
+                    <description/>
+                    <defaultValue>Default Value</defaultValue>
+                    <trim>false</trim>
+                </hudson.model.StringParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+    </properties>
+    <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2648.va9433432b33c">
+        <script>echo "HELLO!"; sleep 10;</script>
+        <sandbox>true</sandbox>
+    </definition>
+    <triggers/>
+    <authToken>MY_TOKEN</authToken>
+    <disabled>false</disabled>
+</flow-definition>

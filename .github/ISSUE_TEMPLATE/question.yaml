@@ -1,0 +1,23 @@
+name: Question
+description: Ask a question about the library.
+title: "[Question]: "
+labels:
+  - question
+body:
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: This project has a Code of Conduct that all participants are expected to understand and follow.
+      options:
+        - label: I have read and agree to the project's [Code of Conduct](CODE_OF_CONDUCT.md)
+          required: true
+
+  - type: textarea
+    attributes:
+      label: Ask your question here
+      description: |
+        - Provide as much context as you can about what you're running into.
+        - Provide project and platform versions (nodejs, npm, etc), depending on what seems relevant.
+    validations:
+      required: true

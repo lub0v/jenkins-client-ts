@@ -1,0 +1,9 @@
+<com.cloudbees.plugins.credentials.domains.Domain plugin="credentials@2.6.1">
+    <name>github</name>
+    <specifications>
+        <com.cloudbees.plugins.credentials.domains.HostnameSpecification>
+            <includes>github.com</includes>
+            <excludes/>
+        </com.cloudbees.plugins.credentials.domains.HostnameSpecification>
+    </specifications>
+</com.cloudbees.plugins.credentials.domains.Domain>
