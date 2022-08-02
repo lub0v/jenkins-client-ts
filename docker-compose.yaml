@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins-local
+    build: .
+    ports:
+      - '8080:8080'
+    volumes:
+      - .local/var/jenkins_home:/var/jenkins_home

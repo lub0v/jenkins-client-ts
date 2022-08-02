@@ -1,0 +1,9 @@
+node_modules
+lib
+.eslintrc.js
+.prettierrc.js
+jest.config.ts
+*.xml
+jest.setup.js
+docs.js
+add-license-header.js
