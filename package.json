@@ -1,6 +1,6 @@
 {
   "name": "jenkins-client-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Jenkins Typescript Client",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
