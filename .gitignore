@@ -129,3 +129,5 @@ __tests__/ignore*
 out.js
 out.json
 out.xml
+
+.DS_Store
